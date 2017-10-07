@@ -1,4 +1,4 @@
-'''
+"""
 Given an array of 2n integers,
 your task is to group these integers into n pairs of integer, 
 say (a1, b1), (a2, b2), ..., 
@@ -11,8 +11,7 @@ Output: 4
 Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).
 Note:
 n is a positive integer, which is in the range of [1, 10000].
-All the integers in the array will be in the range of [-10000, 10000].
-'''
+"""
 
 class Solution(object):
     def arrayPairSum(self, nums):
@@ -23,10 +22,10 @@ class Solution(object):
         return sum(sorted(nums)[::2])
         
 
-'''
+"""
 For this question, it require for the understanding of sum(), sorted(), or list.sort() and Slice List in Python.
 It also can be write like this way:
-'''
+"""
 
 def arrayPairSum(nums):    
         sum = 0
