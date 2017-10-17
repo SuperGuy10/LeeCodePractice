@@ -39,7 +39,7 @@ The given r and c are all positive.
 '''
 For this question, 
 using list1[] + list2[] = list3[] gives you all items in one list instead of a list in a list like list.append()function did. 
-Using list slice to easily transfer 1D list to 2D list.
+Using list slicing to easily transfer 1D list to 2D list.
 for i in a rang, can not directly in a int.
 '''
 class Solution(object):
