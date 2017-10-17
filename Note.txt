@@ -1,0 +1,12 @@
+1. array * int = every item in the array * int
+
+2. using list1[] + list2[] = list3[] gives you all items in one list instead of a list in a list like list.append()function did. 
+3. Using list slicing to easily transfer 1D list to 2D list.
+
+4. for i in a range(), can not directly in a int.
+
+5. numpy.reshape(list,(row, column))
+6. the first parameter is the array you want to reshap, the second is the new numbers of rows and colums that you want
+
+7. array.tolist()
+8. change array to a list
