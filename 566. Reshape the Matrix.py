@@ -64,7 +64,7 @@ class Solution(object):
         return ans
 
 '''
-there is also a cheating way to do this job, by using numpy.reshape() and tolist()
+there is also a cheating way which is import library to do this job, by using numpy.reshape() and tolist()
 numpy.reshape(list,(row, column))
 the first parameter is the array you want to reshap, the second is the new numbers of rows and colums that you want
 
