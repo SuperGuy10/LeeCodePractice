@@ -10,3 +10,5 @@
 
 7. array.tolist()
 8. change array to a list
+
+9. For a list "del" is faster than "remove".
