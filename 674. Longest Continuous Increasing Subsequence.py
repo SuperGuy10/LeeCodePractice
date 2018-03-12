@@ -38,4 +38,5 @@ class Solution(object):
 for this question, need to pay attention on index of arry.
 if we use n+1 > n to judge, the index will overflow. Instead, useing n>n-1.
 and every time set the tem back to 1
+no need to go through each item seperately and the next item, only one loop is enough.
 '''
