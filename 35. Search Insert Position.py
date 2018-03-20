@@ -38,7 +38,7 @@ class Solution(object):
 '''
 Solution 2:
 Binary Search
-Use len()-1 to avoid index overfitting.
+Use len()-1 to avoid index overflow.
 '''
 class Solution(object):
     def searchInsert(self, nums, target):
