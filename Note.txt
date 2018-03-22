@@ -13,3 +13,7 @@
 
 9. For a list "del" is faster than "remove".
 10.The cleanest way to remove elements in list is list.remove(item), quite close to list.pop(item_index) 
+
+11.**List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.**
+details see:
+https://stackoverflow.com/questions/34835951/what-does-list-comprehension-mean-how-does-it-work-and-how-can-i-use-it
