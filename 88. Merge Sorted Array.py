@@ -14,6 +14,7 @@ Output: [1,2,2,3,5,6]
 '''
 '''
 Solution1:
+Try to merge the new list from the end of the list.
 Running time 6.29%
 '''
 class Solution:
