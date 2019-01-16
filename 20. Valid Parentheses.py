@@ -50,3 +50,74 @@ class Solution:
         if len(stack) != 0:
         	return False
         return True  #to avoid empty stack
+
+    
+    
+'''
+second solution
+'''
+
+class Solution:
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        if len(s) == 0:
+            return True
+
+        query_str = None
+
+        for i in range(len(s)):
+            s_str = s[i]
+
+            if query_str is None:
+                query_str = s_str
+
+            elif s_str == '(' or s_str == '[' or s_str == '{':
+                query_str += s_str
+
+            elif len(query_str) == 0:
+                return False
+
+            elif (s_str == ')' and query_str[-1] == '(') or \
+                    (s_str == ']' and query_str[-1] == '[') or \
+                    (s_str == '}' and query_str[-1] == '{'):
+                query_str = query_str[:-1]
+
+            else:
+                return False
+
+        return len(query_str) == 0
+    
+    
+'''
+fastest solution
+'''
+class Solution:
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        valid = False
+        current = []
+        op = {"[", "(", "{"}
+        cl = {"]", ")", "}"}
+        pairs = {"()", "{}", "[]"}
+        for b in s:
+            if b in op:
+                current.append(b)
+            else:
+                try:
+                    cb = current.pop()
+                    pair = cb + b
+                    if pair not in pairs:
+                        return False
+                    else:
+                        continue
+                except IndexError:
+                    return False
+        if len(current) > 0:
+            return False
+        return True
