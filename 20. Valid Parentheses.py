@@ -1,3 +1,5 @@
+'''
+Tag: Array; Difficulty: Easy.
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 An input string is valid if:
 Open brackets must be closed by the same type of brackets.
@@ -23,7 +25,7 @@ Output: false
 Example 5:
 Input: "{[]}"
 Output: true
-
+'''
 
 class Solution:
     def isValid(self, s):
