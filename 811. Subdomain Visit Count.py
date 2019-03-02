@@ -31,6 +31,26 @@ The input count in any count-paired domain will not exceed 10000.
 The answer output can be returned in any order.
 '''
 
+'''
+!!!dict.get(key[, value])!!!
+get() Parameters
+The get() method takes maximum of two parameters:
+key - key to be searched in the dictionary
+value (optional) - Value to be returned if the key is not found. The default value is None.
+
+!!!str.split([separator [, maxsplit]])!!!
+split() Parameters
+The split() method takes maximum of 2 parameters:
+separator (optional)- The is a delimiter. The string splits at the specified separator.
+If the separator is not specified, any whitespace (space, newline etc.) string is a separator.
+maxsplit (optional) - The maxsplit defines the maximum number of splits.
+The default value of maxsplit is -1, meaning, no limit on the number of splits.
+
+!!!dictionary.items()!!!
+The items() method is similar to dictionary's viewitems() method in Python 2.7
+
+'''
+
 class Solution:
     def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
         dic =dict()
@@ -48,3 +68,5 @@ class Solution:
 
         for key,val in dic.items():
             ans.append(' '.join([str(val), key]))
+            
+        return ans
