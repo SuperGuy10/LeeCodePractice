@@ -35,3 +35,35 @@ class Solution(object):
         emps = {employee.id: employee for employee in employees}
         dfs = lambda id: sum([dfs(sub_id) for sub_id in emps[id].subordinates]) + emps[id].importance
         return dfs(id)         
+
+'''
+Different way
+'''
+
+"""
+# Employee info
+class Employee:
+    def __init__(self, id, importance, subordinates):
+        # It's the unique id of each node.
+        # unique id of this employee
+        self.id = id
+        # the importance value of this employee
+        self.importance = importance
+        # the id of direct subordinates
+        self.subordinates = subordinates
+"""
+class Solution(object):
+    def getImportance(self, employees, id):
+        """
+        :type employees: Employee
+        :type id: int
+        :rtype: int
+        """
+        emp = {e.id: e for e in employees}
+        print(emp)
+        return self.dfs(emp, id)
+        
+    def dfs(self, emp, id):
+        employee = emp[id]
+        print(employee)
+        return (employee.importance + sum(self.dfs(emp, id) for id in employee.subordinates))
