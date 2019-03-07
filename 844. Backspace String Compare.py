@@ -93,3 +93,21 @@ class Solution:
             si -= 1
             ti -= 1
         return True
+
+'''
+same but concise way
+'''
+
+class Solution:
+    def backspaceCompare(self, S: 'str', T: 'str') -> 'bool':
+        
+        def back(SS):
+            ans=''
+            for c in SS:
+                if c =='#':
+                    ans=ans[:-1]
+                else:
+                    ans+=c
+            return ans
+        
+        return back(S)==back(T)
