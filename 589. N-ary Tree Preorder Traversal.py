@@ -37,10 +37,14 @@ class Solution:
 # Recursive way
 class Solution:
     def preorder(self, root: 'Node') -> 'List[int]':
-        trav = []
-        if root:
-            trav.append(root.val)
-            while root.children:
-                child = root.children.pop(0)
-                trav += self.preorder(child)
-        return trav
+        res = []
+        if root == None:
+            return []
+        
+        def recursive(root, res):
+            for child in root.children[::-1]:
+                recursive(child, res)
+            res.append(root.val)
+            
+        recursive(root, res)
+        return res[::-1]
