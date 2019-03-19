@@ -6,7 +6,11 @@ For example, given a 3-ary tree:
  {"$id":"3","children":[],"val":2},
  {"$id":"4","children":[],"val":4}],
  "val":1}
-
+      1
+   /  \   \
+  3   2    4
+ / \
+5   6
 Return its preorder traversal as: [1,3,5,6,2,4].
 Note:
 Recursive solution is trivial, could you do it iteratively?
