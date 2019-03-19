@@ -5,6 +5,11 @@ For example, given a 3-ary tree:
  {"$id":"3","children":[],"val":2},
  {"$id":"4","children":[],"val":4}],
  "val":1}
+      1
+   /  \   \
+  3   2    4
+ / \
+5   6
  
 Return its postorder traversal as: [5,6,3,2,4,1].
 Note:
