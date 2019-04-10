@@ -36,3 +36,25 @@ class Solution:
             j -= 1
         
         return 0<i==j<n-1
+
+       
+# Solution 2
+class Solution:
+    def validMountainArray(self, A: 'List[int]') -> 'bool':
+        if len(A) < 3:
+            return False
+        descending = False
+        if A[0] >= A[1]:
+            return False
+        prev = A[0]
+        for i in A[1:]:
+            if i < prev:
+                if not descending:
+                    descending = True
+            elif i > prev:
+                if descending:
+                    return False
+            else:
+                return False
+            prev = i
+        return descending
