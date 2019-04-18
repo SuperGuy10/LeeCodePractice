@@ -43,3 +43,8 @@ class Solution:
         for c in s:
             ans  = ans*26 + (ord(c) - ord('A') + 1)
         return ans
+
+#Solution 3
+class Solution:
+    def titleToNumber(self, s: str) -> int:
+        return sum((ord(char) - 64) * (26 ** exp) for exp, char in enumerate(s[::-1]))
