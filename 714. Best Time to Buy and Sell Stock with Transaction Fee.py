@@ -76,4 +76,7 @@ You might be holding the stock at the end of day(i-1), sell it on day(i), and bu
 c = (hold(i-1) + prices[i] - fee) - prices[i] = hold(i-1) - fee;
 Obviously, a > c, so max(a, c) = a, hold(i) = max(a, b, c) = max(a, b) = max(hold(i-1), cash(i-1) - prices[i])
 The target is to find the maximum profit at the end of day(N): cash(N);
+
+Check out
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 '''
