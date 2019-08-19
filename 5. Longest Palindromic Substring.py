@@ -42,6 +42,26 @@ class Solution:
         return res
 '''
 
+'''
+DP O(n^2) O(n^2)
+'''
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        if s == "" or len(s)<2:
+            return s 
+        dp = [[False for c in range(len(s))]for r in range(len(s))]
+        res = ""
+        count = 0
+        for j in range(1,len(s)):
+            for i in range(j+1):
+                dp [i][j] = s[i]==s[j] and ((j-i<=2) or dp[i+1][j-1])
+                if dp[i][j]:
+                    if j-i+1>count: #!!!have to be j-i+1!!!!
+                        count = j-i+1
+                        res = s[i:j+1]
+        return res
+
+
 #solution 2 didn't figure out yet O(n)
 
 class Solution:
@@ -113,3 +133,5 @@ if s == '':
                 end = i + length//2
         
         return s[start:end+1]
+    
+
