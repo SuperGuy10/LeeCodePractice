@@ -10,8 +10,20 @@ For example, given n = 3, a solution set is:
 ]
 '''
 
-#DP solution: how does this idea come???
+'''
+DP solution: how does this idea come???
+For each valid parenthesis, there must be a pair whose right parenthesis is at the rightmost location. 
+Thus, a valid parenthesis has to be of the following form:  * ( * )
+where * denotes the remaining parentheses which are don't yet know (* can be empty, i.e., with 0 pair of parenthesis). 
+However, we do know the following two important facts:
+both two * are valid parentheses;
+they don't overlap at all! (a pair has to be either on the left side or inside (), 
+but cannot be the case where ( is on the left side and ) is inside ())
+If we put i parentheses inside (), there are n-i-1 to be put on the left side. This gives us a recursive formula as below:
 
+P(n) = P(n-i-1) x P(i)
+where P(n) are all valid parentheses with n parentheses.
+'''
 class Solution(object):
     def generateParenthesis(self, n):
         """
