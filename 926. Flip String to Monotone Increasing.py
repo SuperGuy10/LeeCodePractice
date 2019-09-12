@@ -39,3 +39,40 @@ class Solution:
                 count1 += 1
                 
         return res
+       
+'''       
+solution 2 DP
+Definition:
+dp1[i]: min number of flips to make s[:i+1] to mono increasing by making s[i] to 1
+dp0[i]: min number of flips to make s[:i+1] to mono increasing by making s[i] to 0
+Transition function:
+dp1[i] = min(dp1[i-1], dp0[i-1]) + (1 if s[i] == '0' else 0)
+dp0[i] = dp0[i-1] + (1 if s[i] == '0' else 0)
+Return:
+min(dp0[-1], dp1[-1])
+Since dp1[i], dp0[i] only relies on dp1[i-1] and dp0[i-1], the space complexity can be O(1)
+'''
+
+class Solution(object):
+    def minFlipsMonoIncr(self, S):
+        """
+        :type S: str
+        :rtype: int
+        """
+        if S[0] == '0':
+            dp1 = 1
+        else:
+            dp1 = 0
+        
+        if S[0] == '1':
+            dp0 = 1
+        else:
+            dp0 = 0
+        for i in range(1, len(S)):
+            if S[i] == '0':
+                dp0 += 0
+                dp1 = min(dp1, dp0)+1
+            else:
+                dp1 = min(dp1, dp0)
+                dp0 += 1
+        return min(dp1, dp0)
